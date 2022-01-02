@@ -3,7 +3,7 @@ const fs = require('fs');
 const jest = require('jest');
 const path = require('path');
 
-const Employee = require('./lib/Employee');
+//const Employee = require('./lib/Employee');
 const Engineer = require('./lib/Engineer');
 const Manager = require('./lib/Manager.js');
 const Intern = require('./lib/Intern.js');
@@ -141,7 +141,7 @@ const engineerAdd = async () => {
             name: 'whatNext',
             message: 'Who would you like to add next?',
             choices: ['Manager', 'Engineer', 'Intern', 'My team is complete']
-        }
+        },
     ]);
     const engineer = new Engineer(engineerChoice.id, engineerChoice.name, engineerChoice.email, engineerChoice.github);
     Team.push(engineer);
@@ -152,6 +152,9 @@ const engineerAdd = async () => {
         case 'Intern':
             internAdd();
             break;
+        default: 
+            createTeam();
+    
     }
 }
 
@@ -196,6 +199,8 @@ const internAdd = async () => {
         case 'Intern':
             internAdd();
             break;
+        default: 
+            createTeam();
     }
 }
 
