@@ -10,7 +10,8 @@ const Intern = require('./lib/Intern.js');
 const Team = [];
 
 const generateHTML = require('./src/template');
-
+const generateedDir = path.resolve(__dirname, "generated")
+const outputPath = path.join(generateedDir, "team.html");
 //questions---use inquirer
 //WHEN I start the application THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number
 const managerAdd = () => {
@@ -60,12 +61,12 @@ const managerAdd = () => {
             case 'Intern':
                 internAdd();
                 break;
-            //default: 
-            //writeFile('dist/index.html', generateTeam(Team))
+           default: 
+            createTeam();
         }
     });
 };
-
+/*
 const employeeAdd = async () => {
     const employeeChoice = await inquirer.prompt([
         {
@@ -91,6 +92,12 @@ const employeeAdd = async () => {
             name: 'github',
             message: "Enter employee's github username here"
         },
+        {
+            type: 'list',
+            name: 'whatNext',
+            message: 'Who would you like to add next?',
+            choices: ['Employee', 'Engineer', 'Intern', 'My team is complete']
+        }
     ]);
     const employee = new Employee(employeeChoice.id, employeeChoice.name, employeeChoice.email, employeeChoice.github);
     Team.push(employee);
@@ -103,7 +110,7 @@ const employeeAdd = async () => {
             break;
     }
 }
-
+*/
 const engineerAdd = async () => {
     const engineerChoice = await inquirer.prompt([
         {
@@ -129,6 +136,12 @@ const engineerAdd = async () => {
             name: 'github',
             message: "Enter engineer's github username here"
         },
+        {
+            type: 'list',
+            name: 'whatNext',
+            message: 'Who would you like to add next?',
+            choices: ['Employee', 'Engineer', 'Intern', 'My team is complete']
+        }
     ]);
     const engineer = new Engineer(engineerChoice.id, engineerChoice.name, engineerChoice.email, engineerChoice.github);
     Team.push(engineer);
@@ -167,6 +180,12 @@ const internAdd = async () => {
             name: 'school',
             message: "Enter intern's school here"
         },
+        {
+            type: 'list',
+            name: 'whatNext',
+            message: 'Who would you like to add next?',
+            choices: ['Employee', 'Engineer', 'Intern', 'My team is complete']
+        }
     ]);
     const intern = new Intern(internChoice.id, internChoice.name, internChoice.email, internChoice.school);
     Team.push(intern);
@@ -181,14 +200,21 @@ const internAdd = async () => {
 }
 
 
-//generate HTML files using answers
+/*generate HTML files using answers
 function writeFile(filename, data) {
     fs.writeFile(filename, data, (err) => {
         if (err) throw err;
     })
 }
-//write file to create HTML
-
+*/
+//create HTml
+function createTeam() {
+    // creating the directory using fs
+    if (!fs.existsSync(generateedDir)) {
+      fs.mkdirSync(generateedDir)
+    }
+    fs.writeFileSync(outputPath, generateHTML(Team), "utf-8");
+  }
 managerAdd()
   ;
    
