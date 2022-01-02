@@ -44,7 +44,7 @@ const managerAdd = () => {
             type: 'list',
             name: 'whatNext',
             message: 'Who would you like to add next?',
-            choices: ['Employee', 'Engineer', 'Intern', 'My team is complete']
+            choices: ['Manager', 'Engineer', 'Intern', 'My team is complete']
         }
 
     ])
@@ -53,8 +53,8 @@ const managerAdd = () => {
             const manager = new Manager(managerChoice.id, managerChoice.name, managerChoice.email, managerChoice.officeNumber)
             Team.push(manager)
             switch(managerChoice.whatNext) {
-            case 'Employee':
-                employeeAdd();
+            case 'Manager':
+                managerAdd();
             case 'Engineer':
                 engineerAdd();
                 break;
@@ -140,14 +140,14 @@ const engineerAdd = async () => {
             type: 'list',
             name: 'whatNext',
             message: 'Who would you like to add next?',
-            choices: ['Employee', 'Engineer', 'Intern', 'My team is complete']
+            choices: ['Manager', 'Engineer', 'Intern', 'My team is complete']
         }
     ]);
     const engineer = new Engineer(engineerChoice.id, engineerChoice.name, engineerChoice.email, engineerChoice.github);
     Team.push(engineer);
     switch (engineerChoice.whatNext) {
-        case 'Employee':
-            employeeAdd();
+        case 'Manager':
+            managerAdd();
             break;
         case 'Intern':
             internAdd();
@@ -184,7 +184,7 @@ const internAdd = async () => {
             type: 'list',
             name: 'whatNext',
             message: 'Who would you like to add next?',
-            choices: ['Employee', 'Engineer', 'Intern', 'My team is complete']
+            choices: ['Manager', 'Engineer', 'Intern', 'My team is complete']
         }
     ]);
     const intern = new Intern(internChoice.id, internChoice.name, internChoice.email, internChoice.school);
