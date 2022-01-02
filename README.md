@@ -25,4 +25,5 @@ Type npm test in the command line to run the unit tests.
 
 ## Questions
    Watch this demo video to help get started:
-   [![Walkthrough video](https://watch.screencastify.com/v/4uDBc3qSHyVZR5f10aEl)]
+  [Walkthrough video](https://watch.screencastify.com/v/4uDBc3qSHyVZR5f10aEl).
+   
