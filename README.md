@@ -20,9 +20,9 @@ Open the repository and type npm install into the command line.
 Next, type node index.js to initialize the questions.
 
 ## Usage
-Answer each question in the command line in order to generate an HTML file. The questions will allow you to create a team with employees including managers, engineers, and interns. After you decide not to add any more team members, they will be displayed as cards on the generated webpage. 
+Type 'node index' into terminal and answer each question in the command line in order to generate an HTML file. The questions will allow you to create a team of employees including managers, engineers, and interns. After you decide not to add any more team members, they will be displayed as cards on the generated webpage. 
 Type npm test in the command line to run the unit tests.
 
 ## Questions
    Watch this demo video to help get started:
-   [![Walkthrough video]()]
+   [![Walkthrough video](https://watch.screencastify.com/v/4uDBc3qSHyVZR5f10aEl)]
