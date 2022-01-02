@@ -1,0 +1,19 @@
+h1 {
+    color: palevioletred;
+   
+}
+
+h2, h3 {
+    color: rgba(83, 110, 36, 0.747);
+}
+
+.card-body {
+    background-color: rgba(83, 110, 36, 0.589);
+    
+}
+
+.card {
+    
+    display: flex;
+    flex-direction: column;
+}
